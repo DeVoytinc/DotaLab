@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -23,6 +24,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.dotalabapplication.R
 import com.example.dotalabapplication.ui.theme.AppTheme
 
@@ -61,35 +63,37 @@ fun HeaderBackground(
         )
         {
             DotaLogo()
-            Column(modifier = AppTheme.Paddings.AppNamePadding)
+            Column(modifier = Modifier.padding(AppTheme.Paddings.AppNameColumnPadding))
             {
                 Text(
                     text = stringResource(R.string.name_app_in_store),
                     color = AppTheme.TextColors.primary,
-                    fontSize = AppTheme.TextStyle.AppNameInStore.fontSize,
-                    fontWeight = AppTheme.TextStyle.AppNameInStore.fontWeight,
-                    fontFamily = AppTheme.TextStyle.AppNameInStore.fontFamily,
-                    lineHeight = AppTheme.TextStyle.AppNameInStore.lineHeight,
+                    style = AppTheme.TextStyle.AppNameInStore,
+                    modifier = Modifier.padding(AppTheme.Paddings.AppNameTextPadding)
                 )
+
                 Row(
-                    modifier = Modifier.width(AppTheme.Sizes.RatingStarsWidth),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.fillMaxWidth(),
                 )
                 {
-                    repeat(5){
-                        Image(
-                            painter = painterResource(R.drawable.rating_star),
-                            contentDescription = "rating star",
-                            modifier = Modifier.size(AppTheme.Sizes.RatingStarSize)
-                        )
+                    Row(
+                        modifier = Modifier.width(AppTheme.Sizes.RatingStarsWidth),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically,
+                    ){
+                        repeat(5){
+                            Image(
+                                painter = painterResource(R.drawable.rating_star),
+                                contentDescription = "rating star",
+                                modifier = Modifier.size(AppTheme.Sizes.RatingStarSize)
+                            )
 
+                        }
                     }
+                    Spacer(modifier = Modifier.width(10.dp))
                     Text(
-                        text = stringResource(id = R.string.reviews),
-                        fontFamily = AppTheme.TextStyle.NormalText.fontFamily,
-                        fontSize = AppTheme.TextStyle.NormalText.fontSize,
-                        fontStyle = AppTheme.TextStyle.NormalText.fontStyle,
+                        text = stringResource(id = R.string.reviews_amount),
+                        style = AppTheme.TextStyle.NormalText,
                         color = AppTheme.TextColors.ReviewsText,
                     )
                 }

@@ -3,6 +3,8 @@ package com.example.dotalabapplication.ui.theme
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
@@ -75,7 +77,10 @@ object AppTheme {
 
     object  Paddings {
         @get:Composable
-        val AppNamePadding get() = appNamePadding
+        val AppNameColumnPadding get() = appNameColumpPadding
+
+        @get:Composable
+        val AppNameTextPadding get() = appNameTextPadding
 
         @get:Composable
         val LeftPadding get() = contentPadding
@@ -88,6 +93,16 @@ object AppTheme {
 
         @get:Composable
         val VideoPreviewRowcontentPadding get() = videoPreviewRowcontentPadding
+
+        @get:Composable
+        val StarsAndReviewsColumnPadding get() = starsAndReviewsColumnPadding
+
+        @get:Composable
+        val StarsAndReviewsRowPadding get() = starsAndReviewsRowPadding
+
+        @get:Composable
+        val ReviewAndRatingTextPadding get() = reviewAndRatingTextPadding
+
 
     }
 
@@ -137,7 +152,8 @@ object AppTheme {
         @get:Composable
         val VideoPreviewPlayIconSize get() = videoPreviewPlayIconSize
 
-
+        @get:Composable
+        val StarsAndReviewsColumnHeight get() = starsAndReviewsColumnHeight
     }
 
     object BgColors {
@@ -192,6 +208,9 @@ object AppTheme {
 
         @get:Composable
         val ReviewsText get() = reviewsText
+
+        @get:Composable
+        val ReviewsBlockText get() = reviewsBlockText
     }
 
     object TextStyle {
@@ -217,6 +236,34 @@ object AppTheme {
                     lineHeight = 26.sp,
                     fontWeight = FontWeight.Bold,
                     fontFamily = Modernist,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None,
+                    ),
+                )
+
+        val ReviewAndRatingText
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = Modernist,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 16.sp,
+                    platformStyle = PlatformTextStyle(includeFontPadding = false),
+                    lineHeightStyle = LineHeightStyle(
+                        LineHeightStyle.Alignment.Proportional,
+                        LineHeightStyle.Trim.None,
+                    ),
+                )
+
+        val CommentAuthor
+            @Composable
+            get() =
+                TextStyle(
+                    fontFamily = Modernist,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 16.sp,
                     platformStyle = PlatformTextStyle(includeFontPadding = false),
                     lineHeightStyle = LineHeightStyle(
                         LineHeightStyle.Alignment.Proportional,

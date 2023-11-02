@@ -23,10 +23,11 @@ val mainButton  = Color(0xFFF4D144)
 
 //Text colors
 val primaryText = Color.White
-val secondaryText = Color(0xEEF2FBB2)
+val secondaryText = Color(0xFFEEF2FB)
 val tagText = Color(0xFF41A0E7)
 val messageText = Color(0xFFA8ADB7)
 val dateText = Color(0xFFFFFF66)
 val buttonText = Color(0xFF050B18)
 val reviewsText = Color(0xFF45454D)
+val reviewsBlockText = Color(0xFFA8ADB7)
 val descriptionText = Color(0xB2EEF2FB)
