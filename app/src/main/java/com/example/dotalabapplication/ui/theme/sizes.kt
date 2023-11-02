@@ -14,10 +14,10 @@ val midleRoundedBox = RoundedCornerShape(20.dp, 20.dp, 0.dp, 0.dp)
 //Paddings
 val logoPadding = 17.dp
 val contentPadding = 24.dp
+val mainContentPadding = PaddingValues(
+    start = 24.dp,end = 24.dp)
 val descriptionPadding = PaddingValues(
     start = 24.dp, top = 14.dp, bottom = 14.dp,)
-val videoPreviewRowcontentPadding = PaddingValues(
-    start = 24.dp,end = 24.dp)
 val appNameColumpPadding = PaddingValues(
     top = 30.dp, start = 14.dp)
 val appNameTextPadding = PaddingValues(
@@ -28,6 +28,10 @@ val starsAndReviewsRowPadding = PaddingValues(
     start = 24.dp, end = 24.dp, bottom = 16.dp)
 val starsAndReviewsColumnPadding = PaddingValues(
     start = 10.dp, top = 5.dp)
+val tagsPadding = PaddingValues(
+    top = 16.dp, bottom = 16.dp)
+val tagTextPadding = PaddingValues(
+    vertical = 5.dp, horizontal = 10.dp)
 
 
 //Sizes
@@ -39,6 +43,8 @@ val midleBoxSize = 65.dp
 val logoSize = 88.dp
 val ratingStarSize = 12.dp
 val ratingStarsWidth = 80.dp
+
+val spacedBetweenTags = 10.dp
 
 val videoPreviewRowHeight = 150.dp
 val videoPreviewRowSpacedBy = 10.dp

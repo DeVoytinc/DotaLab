@@ -72,6 +72,6 @@ fun PreviewVideoPreviewRow(){
             painterResource(R.drawable.video_preview0),
             painterResource(R.drawable.videp_preview1)
         ),
-        contentPadding = AppTheme.Paddings.VideoPreviewRowcontentPadding
+        contentPadding = AppTheme.Paddings.MainContentPadding
     )
 }

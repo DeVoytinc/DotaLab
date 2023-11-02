@@ -1,5 +1,6 @@
 package com.example.dotalabapplication.ui
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -21,6 +22,13 @@ fun DotaScreen() {
             DotaScreenHeader()
         }
         item{
+            ScrollableChipsRow(
+                items = listOf("MOBA", "MULTYPLAYER", "STRATEGY"),
+                modifier = Modifier.padding(AppTheme.Paddings.TagsPadding),
+                contentPadding = AppTheme.Paddings.MainContentPadding
+            )
+        }
+        item{
             Text(
                 text = stringResource(R.string.description),
                 fontFamily = AppTheme.TextStyle.NormalText.fontFamily,
@@ -36,7 +44,7 @@ fun DotaScreen() {
                     painterResource(R.drawable.video_preview0),
                     painterResource(R.drawable.videp_preview1)
                 ),
-                contentPadding = AppTheme.Paddings.VideoPreviewRowcontentPadding
+                contentPadding = AppTheme.Paddings.MainContentPadding
             )
         }
         item{
