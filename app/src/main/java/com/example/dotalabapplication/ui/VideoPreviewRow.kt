@@ -12,7 +12,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.PlayArrow
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,8 +24,13 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.dotalabapplication.R
 import com.example.dotalabapplication.ui.theme.AppTheme
+import com.example.dotalabapplication.ui.theme.BgColors
+import com.example.dotalabapplication.ui.theme.Paddings
+import com.example.dotalabapplication.ui.theme.Rounds
+import com.example.dotalabapplication.ui.theme.Sizes
 
 @Composable
 fun VideoPreviewRow(
@@ -30,7 +38,7 @@ fun VideoPreviewRow(
     contentPadding: PaddingValues
 ){
     LazyRow(
-        horizontalArrangement = Arrangement.spacedBy(AppTheme.Sizes.VideoPreviewRowSpacedBy),
+        horizontalArrangement = Arrangement.spacedBy(Sizes.VideoPreviewRowSpacedBy),
         contentPadding = contentPadding
     ) {
         items(items.size) { previewText ->
@@ -40,29 +48,31 @@ fun VideoPreviewRow(
                     contentDescription = null,
                     contentScale = ContentScale.Fit,
                     modifier = Modifier
-                        .height(AppTheme.Sizes.VideoPreviewRowHeight)
-                        .clip(shape = RoundedCornerShape(AppTheme.Rounds.RoundMain))
+                        .height(Sizes.VideoPreviewRowHeight)
+                        .clip(shape = RoundedCornerShape(Rounds.RoundMain))
                 )
-                Box(modifier = Modifier
-                    .align(Alignment.Center)
-                    .background(AppTheme.BgColors.VideoPlayTransparentColor, CircleShape)
-                    .clip(shape = CircleShape)
-                    .size(AppTheme.Sizes.VideoPreviewPlayButtonSize)
+                Button(
+                    onClick = {  },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = BgColors.VideoPlayTransparentColor,
+                        contentColor = BgColors.IconPlayOnvideoRowColor
+                    ),
+                    shape = CircleShape,
+                    contentPadding = PaddingValues(1.dp),
+                    modifier = Modifier
+                        .size(Sizes.VideoPreviewPlayButtonSize)
+                        .align(alignment = Alignment.Center)
+
                 ) {
                     Icon(
                         Icons.Rounded.PlayArrow,
                         contentDescription = "Play",
-                        tint = AppTheme.BgColors.IconPlayOnvideoRowColor,
-                        modifier = Modifier
-                            .size(AppTheme.Sizes.VideoPreviewPlayIconSize)
-                            .align(alignment = Alignment.Center)
                     )
                 }
             }
         }
     }
 }
-
 
 @Preview
 @Composable
@@ -72,6 +82,6 @@ fun PreviewVideoPreviewRow(){
             painterResource(R.drawable.video_preview0),
             painterResource(R.drawable.videp_preview1)
         ),
-        contentPadding = AppTheme.Paddings.MainContentPadding
+        contentPadding = Paddings.MainContentPadding
     )
 }

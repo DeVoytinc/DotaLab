@@ -17,6 +17,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.dotalabapplication.R
 import com.example.dotalabapplication.ui.theme.AppTheme
+import com.example.dotalabapplication.ui.theme.Paddings
+import com.example.dotalabapplication.ui.theme.Sizes
+import com.example.dotalabapplication.ui.theme.TextColors
 
 @Composable
 fun RatingBlock(
@@ -28,16 +31,16 @@ fun RatingBlock(
         Text(
             text = rating.toString(),
             style = AppTheme.TextStyle.Bold_48,
-            color = AppTheme.TextColors.primary,
+            color = TextColors.primary,
         )
         Column(modifier = Modifier
             .align(Alignment.CenterVertically)
-            .height(AppTheme.Sizes.StarsAndReviewsColumnHeight)
-            .padding(AppTheme.Paddings.StarsAndReviewsColumnPadding),
+            .height(Sizes.StarsAndReviewsColumnHeight)
+            .padding(Paddings.StarsAndReviewsColumnPadding),
             verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.Start) {
             Row(
-                modifier = Modifier.width(AppTheme.Sizes.RatingStarsWidth),
+                modifier = Modifier.width(Sizes.RatingStarsWidth),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -45,14 +48,14 @@ fun RatingBlock(
                     Image(
                         painter = painterResource(R.drawable.rating_star),
                         contentDescription = "rating star",
-                        modifier = Modifier.size(AppTheme.Sizes.RatingStarSize)
+                        modifier = Modifier.size(Sizes.RatingStarSize)
                     )
                 }
             }
             Text(
                 text = "$reviewsCount" + " " + stringResource(id = R.string.reviews),
                 style = AppTheme.TextStyle.NormalText,
-                color = AppTheme.TextColors.ReviewsBlockText,
+                color = TextColors.ReviewsBlockText,
             )
         }
     }
@@ -62,6 +65,6 @@ fun RatingBlock(
 @Composable
 fun RatingBlockPreview(){
     RatingBlock(rating = 4.9f, reviewsCount = stringResource(id = R.string.reviews_amount),
-        modifier = Modifier.padding(AppTheme.Paddings.StarsAndReviewsRowPadding)
+        modifier = Modifier.padding(Paddings.StarsAndReviewsRowPadding)
     )
 }

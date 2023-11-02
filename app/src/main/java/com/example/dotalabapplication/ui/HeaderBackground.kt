@@ -27,6 +27,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.dotalabapplication.R
 import com.example.dotalabapplication.ui.theme.AppTheme
+import com.example.dotalabapplication.ui.theme.BgColors
+import com.example.dotalabapplication.ui.theme.Paddings
+import com.example.dotalabapplication.ui.theme.Rounds
+import com.example.dotalabapplication.ui.theme.Sizes
+import com.example.dotalabapplication.ui.theme.TextColors
 
 
 @Composable
@@ -35,7 +40,7 @@ fun HeaderBackground(
     modifier: Modifier = Modifier,
 ) {
     Box(modifier = modifier
-        .height(AppTheme.Sizes.ScreenHeaderHeight)
+        .height(Sizes.ScreenHeaderHeight)
         .fillMaxWidth())
     {
         Image(
@@ -44,32 +49,32 @@ fun HeaderBackground(
             contentScale = ContentScale.Crop,
             alignment = Alignment.TopCenter,
             modifier = Modifier
-                .height(AppTheme.Sizes.BackGroungImageHeight)
+                .height(Sizes.BackGroungImageHeight)
                 .fillMaxSize()
         )
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(AppTheme.Sizes.MidleBoxSize)
+                .height(Sizes.MidleBoxSize)
                 .align(alignment = Alignment.BottomCenter)
                 .background(
-                    color = Color(AppTheme.BgColors.primary.toArgb()),
-                    AppTheme.Rounds.MidleRoundedBox
+                    color = Color(BgColors.primary.toArgb()),
+                    Rounds.MidleRoundedBox
                 )
         )
         Row(modifier = Modifier
             .align(Alignment.BottomStart)
-            .padding(horizontal = AppTheme.Paddings.LeftPadding)
+            .padding(horizontal = Paddings.LeftPadding)
         )
         {
             DotaLogo()
-            Column(modifier = Modifier.padding(AppTheme.Paddings.AppNameColumnPadding))
+            Column(modifier = Modifier.padding(Paddings.AppNameColumnPadding))
             {
                 Text(
                     text = stringResource(R.string.name_app_in_store),
-                    color = AppTheme.TextColors.primary,
+                    color = TextColors.primary,
                     style = AppTheme.TextStyle.AppNameInStore,
-                    modifier = Modifier.padding(AppTheme.Paddings.AppNameTextPadding)
+                    modifier = Modifier.padding(Paddings.AppNameTextPadding)
                 )
 
                 Row(
@@ -77,7 +82,7 @@ fun HeaderBackground(
                 )
                 {
                     Row(
-                        modifier = Modifier.width(AppTheme.Sizes.RatingStarsWidth),
+                        modifier = Modifier.width(Sizes.RatingStarsWidth),
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically,
                     ){
@@ -85,7 +90,7 @@ fun HeaderBackground(
                             Image(
                                 painter = painterResource(R.drawable.rating_star),
                                 contentDescription = "rating star",
-                                modifier = Modifier.size(AppTheme.Sizes.RatingStarSize)
+                                modifier = Modifier.size(Sizes.RatingStarSize)
                             )
 
                         }
@@ -94,7 +99,7 @@ fun HeaderBackground(
                     Text(
                         text = stringResource(id = R.string.reviews_amount),
                         style = AppTheme.TextStyle.NormalText,
-                        color = AppTheme.TextColors.ReviewsText,
+                        color = TextColors.ReviewsText,
                     )
                 }
             }

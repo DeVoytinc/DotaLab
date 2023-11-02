@@ -16,20 +16,24 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.dotalabapplication.R
 import com.example.dotalabapplication.ui.theme.AppTheme
+import com.example.dotalabapplication.ui.theme.BgColors
+import com.example.dotalabapplication.ui.theme.Paddings
+import com.example.dotalabapplication.ui.theme.Rounds
+import com.example.dotalabapplication.ui.theme.Sizes
 
 @Composable
 fun DotaLogo(){
     Box(
         modifier = Modifier
-            .size(AppTheme.Sizes.LogoSize)
+            .size(Sizes.LogoSize)
             .background(
                 Color.Black,
-                RoundedCornerShape(AppTheme.Rounds.RoundMain)
+                RoundedCornerShape(Rounds.RoundMain)
             )
             .border(
-                AppTheme.Sizes.BorderLogo,
-                Color(AppTheme.BgColors.border.toArgb()),
-                RoundedCornerShape(AppTheme.Rounds.RoundMain)
+                Sizes.BorderLogo,
+                Color(BgColors.border.toArgb()),
+                RoundedCornerShape(Rounds.RoundMain)
             )
     )
     {
@@ -38,7 +42,7 @@ fun DotaLogo(){
             contentDescription = "Dota logo",
             modifier = Modifier
                 .fillMaxSize()
-                .padding(AppTheme.Paddings.LogoPadding)
+                .padding(Paddings.LogoPadding)
 
         )
     }

@@ -8,6 +8,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
 import com.example.dotalabapplication.ui.theme.AppTheme
+import com.example.dotalabapplication.ui.theme.BgColors
 import com.example.dotalabapplication.ui.theme.MainScreen
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +19,7 @@ class MainActivity : ComponentActivity() {
             AppTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = AppTheme.BgColors.primary
+                    color = BgColors.primary
                 ) {
                     MainScreen()
                 }

@@ -11,6 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.dotalabapplication.ui.theme.AppTheme
+import com.example.dotalabapplication.ui.theme.BgColors
+import com.example.dotalabapplication.ui.theme.Paddings
+import com.example.dotalabapplication.ui.theme.Sizes
+import com.example.dotalabapplication.ui.theme.TextColors
 
 @Composable
 fun ScrollableChipsRow(
@@ -20,7 +24,7 @@ fun ScrollableChipsRow(
 )
 {
     LazyRow(
-        horizontalArrangement = Arrangement.spacedBy(AppTheme.Sizes.SpacedBetweenTags),
+        horizontalArrangement = Arrangement.spacedBy(Sizes.SpacedBetweenTags),
         contentPadding = contentPadding,
         modifier =  modifier
     ){
@@ -32,14 +36,14 @@ fun ScrollableChipsRow(
 @Composable
 fun Chip(text: String) {
     Surface(
-        color = AppTheme.BgColors.tag,
+        color = BgColors.tag,
         shape = CircleShape
     ) {
         Text(
             text = text,
             style = AppTheme.TextStyle.Tag,
-            color = AppTheme.TextColors.tag,
-            modifier = Modifier.padding(AppTheme.Paddings.TagTextPadding)
+            color = TextColors.tag,
+            modifier = Modifier.padding(Paddings.TagTextPadding)
         )
     }
 }
@@ -55,7 +59,7 @@ fun ChipPreview() {
 fun ScrollableChipsRowPreview(){
     ScrollableChipsRow(
         items = listOf("MOBA", "MULTYPLAYER", "STRATEGY"),
-        modifier = Modifier.padding(AppTheme.Paddings.TagsPadding),
-        contentPadding = AppTheme.Paddings.MainContentPadding
+        modifier = Modifier.padding(Paddings.TagsPadding),
+        contentPadding = Paddings.MainContentPadding
     )
 }
