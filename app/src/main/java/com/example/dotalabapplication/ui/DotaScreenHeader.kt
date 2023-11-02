@@ -15,3 +15,9 @@ fun DotaScreenHeader(
         modifier = modifier
     )
 }
+
+@Preview
+@Composable
+fun DotaScreenHeader(){
+    DotaScreenHeader(Modifier)
+}

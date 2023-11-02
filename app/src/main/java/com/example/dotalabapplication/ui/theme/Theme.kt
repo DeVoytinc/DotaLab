@@ -35,7 +35,7 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun AppTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = false,
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
@@ -110,34 +110,20 @@ object AppTheme {
                     ),
                 )
 
-        val ReviewAndRatingText
+        val ButtonText
             @Composable
             get() =
                 TextStyle(
                     fontFamily = Modernist,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
+                    fontSize = 20.sp,
+                    letterSpacing = 0.5.sp,
                     platformStyle = PlatformTextStyle(includeFontPadding = false),
                     lineHeightStyle = LineHeightStyle(
                         LineHeightStyle.Alignment.Proportional,
                         LineHeightStyle.Trim.None,
                     ),
                 )
-
-        val CommentAuthor
-            @Composable
-            get() =
-                TextStyle(
-                    fontFamily = Modernist,
-                    fontWeight = FontWeight.Normal,
-                    fontSize = 16.sp,
-                    platformStyle = PlatformTextStyle(includeFontPadding = false),
-                    lineHeightStyle = LineHeightStyle(
-                        LineHeightStyle.Alignment.Proportional,
-                        LineHeightStyle.Trim.None,
-                    ),
-                )
-
         val NormalText
             @Composable
             get() =

@@ -19,7 +19,7 @@ object  Paddings {
         17.dp
     @get:Composable
     val DescriptionPadding get() = PaddingValues(
-        start = 24.dp, top = 14.dp, bottom = 14.dp,)
+        start = 24.dp, top = 14.dp, bottom = 14.dp, end = 24.dp)
     @get:Composable
     val MainContentPadding get() = PaddingValues(
         start = 24.dp,end = 24.dp)
