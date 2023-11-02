@@ -5,6 +5,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.example.dotalabapplication.R
 import com.example.dotalabapplication.ui.theme.AppTheme
@@ -23,6 +24,15 @@ fun DotaScreen() {
                 fontStyle = AppTheme.TextStyle.NormalText.fontStyle,
                 color = AppTheme.TextColors.DescriptionText,
                 modifier = AppTheme.Paddings.DescriptionPadding,
+            )
+        }
+        item {
+            VideoPreviewRow(
+                items = listOf(
+                    painterResource(R.drawable.video_preview0),
+                    painterResource(R.drawable.videp_preview1)
+                ),
+                contentPadding = AppTheme.Paddings.VideoPreviewRowcontentPadding
             )
         }
     }

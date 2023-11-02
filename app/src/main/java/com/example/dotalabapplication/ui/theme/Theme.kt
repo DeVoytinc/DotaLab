@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.LineHeightStyle
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 import com.example.dotalabapplication.R
@@ -84,15 +85,16 @@ object AppTheme {
 
         @get:Composable
         val DescriptionPadding get() = descriptionPadding
+
+        @get:Composable
+        val VideoPreviewRowcontentPadding get() = videoPreviewRowcontentPadding
+
     }
 
 
     object  Rounds {
         @get:Composable
         val RoundMain get() = roundMain
-
-        @get:Composable
-        val RoundBg get() = roundBackground
 
         @get:Composable
         val MidleRoundedBox get() = midleRoundedBox
@@ -124,6 +126,18 @@ object AppTheme {
         @get:Composable
         val BackGroungImageHeight get() = backGroungImageHeight
 
+        @get:Composable
+        val VideoPreviewRowHeight get() = videoPreviewRowHeight
+
+        @get:Composable
+        val VideoPreviewRowSpacedBy get() = videoPreviewRowSpacedBy
+
+        @get:Composable
+        val VideoPreviewPlayButtonSize get() = videoPreviewPlayButtonSize
+        @get:Composable
+        val VideoPreviewPlayIconSize get() = videoPreviewPlayIconSize
+
+
     }
 
     object BgColors {
@@ -138,6 +152,11 @@ object AppTheme {
 
         @get:Composable
         val divider get() = dividerbg
+
+        @get:Composable
+        val IconPlayOnvideoRowColor get() = iconPlayOnvideoRowColor
+        @get:Composable
+        val VideoPlayTransparentColor get() = videoPlayTransparentColor
 
 
     }

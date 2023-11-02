@@ -11,10 +11,12 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 // Minskiy Underground colors (background colors)
+val iconPlayOnvideoRowColor = Color.White
 val primarybg = Color(0xFF050B18)
 val tagbg = Color(0x3D44A9F4)
 val borderbg = Color(0xFF1F2430)
 val dividerbg = Color(0xFF1A1F29)
+val videoPlayTransparentColor = Color(0x3DFFFFFF)
 
 //Button colors
 val mainButton  = Color(0xFFF4D144)
