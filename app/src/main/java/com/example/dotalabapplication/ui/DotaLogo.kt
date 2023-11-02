@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.dotalabapplication.R
 import com.example.dotalabapplication.ui.theme.AppTheme
 
@@ -41,4 +42,10 @@ fun DotaLogo(){
 
         )
     }
+}
+
+@Preview
+@Composable
+fun DotaLogoPreview(){
+    DotaLogo()
 }
